@@ -1,0 +1,82 @@
+//*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* Colors *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+// Light Color Palette (Custom Properties)
+html {
+    --color-primary: #8B0100;
+    --color-primary-m: #ac04523f;
+    // --color-secondary: #8B0038;
+    --color-secondary: #c4195d;
+    --color-secondary-m: #A546A0;
+    --color-tertiary: #74235D;
+    --color-tertiary-m: #2224369a;
+    --color-quaternary: #50396D;
+    --color-quaternary-m: #012e4480;
+    --color-quinary: #FFE6D9;
+    --color-quinary-m: rgba(255, 255, 255, 0.5);
+}
+
+// Dark Color Palette (Custom Properties)
+html[data-theme="dark"] {
+    --color-primary: rgb(36, 38, 43);
+    --color-primary-m: rgba(36, 38, 43, 0.65);
+    --color-secondary: rgb(124, 185, 8);
+    --color-secondary-m: rgba(123, 185, 8, 0.5);
+    --color-tertiary: rgb(38, 52, 65);
+    --color-tertiary-m: hsla(183, 34%, 38%, 0.65);
+    --color-quaternary: hsl(220, 10%, 28%);
+    --color-quaternary-m: hsla(220, 10%, 28%, 0.65);
+    --color-quinary: white;
+    --color-quinary-m: rgba(255, 255, 255, 0.5);
+}
+
+//*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* Font Weights *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+$font-weights: ('font-weight-thin': 100,
+    'font-weight-light': 300,
+    'font-weight-regular': 400,
+    'font-weight-medium': 500,
+    'font-weight-bold': 700,
+    'font-weight-black': 700,
+);
+
+// function that takes font-weights.key as a parameter and return it from font-weights
+@function font-weight($font-weights-style) {
+    @return map-get($font-weights, $font-weights-style)
+}
+
+;
+
+//*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* Font Size *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+// $font-size:("font-size-small": calc(1.2rem + 0.5vw),
+//     "font-size-regular": calc(1.5rem + 1vw),
+//     "font-size-medium": calc(1.5rem + 2vw),
+//     "font-size-large": calc(1.5rem + 5vw),
+//     "font-size-xlarge": calc(2.5rem + 5vw),
+// );
+
+$font-size:("font-size-small": calc(1.2rem + 0.3vw),
+    "font-size-regular": calc(1.5rem + 0.8vw),
+    "font-size-medium": calc(1.5rem + 1.7vw),
+    "font-size-large": calc(1.5rem + 4.5vw),
+    "font-size-xlarge": calc(2.5rem + 4.5vw),
+);
+
+// function that takes font-size.key as a parameter and return it from font-size
+@function font-size($font-size-style) {
+    @return map-get($font-size, $font-size-style)
+}
+
+;
+
+//*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* Break Points / Media Query *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+$break-points:("break-point-small": 450px,
+    "break-point-medium": 600px,
+    "break-point-tablet": 820px,
+    "break-point-desktop": 1300px,
+);
+
+@function break-point($break-point-limit) {
+    @return map-get($break-points, $break-point-limit)
+}

@@ -366,7 +366,7 @@ i {
 
 .hero {
   grid-column: container-start / container-end;
-  background-image: linear-gradient(var(--color-quaternary-m), var(--color-quaternary-m)), url(/up/img/hero/hero-bg.jpg);
+  background-image: linear-gradient(var(--color-quaternary-m), var(--color-quaternary-m)), url(../img/hero/hero-bg.jpg);
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -505,7 +505,7 @@ i {
 
 .motto {
   grid-column: container-start / container-end;
-  background-image: linear-gradient(var(--color-tertiary-m), var(--color-tertiary-m)), url(/up/img/motto/motto-bg.jpg);
+  background-image: linear-gradient(var(--color-tertiary-m), var(--color-tertiary-m)), url(../img/motto/motto-bg.jpg);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   gap: 2.5rem;
@@ -638,39 +638,39 @@ i {
 }
 
 .features__content:nth-child(1) {
-  background-image: url(/up/img/features/features-1.jpg);
+  background-image: url(../img/features/features-1.jpg);
 }
 
 .features__content:nth-child(2) {
-  background-image: url(/up/img/features/features-2.jpg);
+  background-image: url(../img/features/features-2.jpg);
 }
 
 .features__content:nth-child(3) {
-  background-image: url(/up/img/features/features-3.jpg);
+  background-image: url(../img/features/features-3.jpg);
 }
 
 .features__content:nth-child(4) {
-  background-image: url(/up/img/features/features-4.jpg);
+  background-image: url(../img/features/features-4.jpg);
 }
 
 .features__content:nth-child(5) {
-  background-image: url(/up/img/features/features-5.jpg);
+  background-image: url(../img/features/features-5.jpg);
 }
 
 .features__content:nth-child(6) {
-  background-image: url(/up/img/features/features-6.jpg);
+  background-image: url(../img/features/features-6.jpg);
 }
 
 .features__content:nth-child(7) {
-  background-image: url(/up/img/features/features-7.jpg);
+  background-image: url(../img/features/features-7.jpg);
 }
 
 .features__content:nth-child(8) {
-  background-image: url(/up/img/features/features-8.jpg);
+  background-image: url(../img/features/features-8.jpg);
 }
 
 .features__content:nth-child(9) {
-  background-image: url(/up/img/features/features-9.jpg);
+  background-image: url(../img/features/features-9.jpg);
 }
 
 .features {
@@ -940,7 +940,7 @@ i {
 
 .testimonials {
   grid-column: container-start / container-end;
-  background-image: linear-gradient(var(--color-tertiary-m), var(--color-tertiary-m)), url(/up/img/testimonials/testimonials-bg.jpg);
+  background-image: linear-gradient(var(--color-tertiary-m), var(--color-tertiary-m)), url(../img/testimonials/testimonials-bg.jpg);
 }
 
 .testimonials__title {
@@ -1022,7 +1022,7 @@ i {
 
 .clients {
   grid-column: container-start / container-end;
-  background-image: linear-gradient(var(--color-quaternary-m), var(--color-quaternary-m)), url(/up/img/clients/clients-bg.jpg);
+  background-image: linear-gradient(var(--color-quaternary-m), var(--color-quaternary-m)), url(../img/clients/clients-bg.jpg);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1235,7 +1235,7 @@ i {
 
 .footer {
   grid-column: container-start / container-end;
-  background-image: linear-gradient(var(--color-tertiary-m), var(--color-tertiary-m)), url(/up/img/footer/footer-bg.jpg);
+  background-image: linear-gradient(var(--color-tertiary-m), var(--color-tertiary-m)), url(../img/footer/footer-bg.jpg);
   display: grid;
   grid-template-rows: repeat(3, max-content);
   gap: 8vh;

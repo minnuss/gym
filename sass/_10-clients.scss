@@ -1,0 +1,96 @@
+.clients {
+    grid-column: container-start / container-end;
+
+    background-image: linear-gradient(var(--color-quaternary-m), var(--color-quaternary-m)),
+        url(../img/clients/clients-bg.jpg);
+
+    @extend %bg;
+    @extend %sec-padding;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    &__title {
+        @extend %sec-h2;
+        color: var(--color-quinary) !important;
+        text-align: center;
+        margin-bottom: 2rem;
+        position: relative;
+        align-self: center;
+        padding: 1rem;
+    }
+
+    &__title::before,
+    &__title::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        background-color: var(--color-quinary);
+        height: 100%;
+        width: 2px;
+        transition: all 0.5s ease-in-out;
+    }
+
+    &__title::before {
+        left: 0;
+    }
+
+    &__title::after {
+        right: 0;
+    }
+
+    &__title:hover:before,
+    &__title:active:before,
+    &__title:hover:after,
+    &__title:active:after {
+        height: 2px;
+        width: 100%;
+    }
+
+    &__title:hover:after,
+    &__title:active:after {
+        top: 100%;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        text-align: center;
+
+
+        &--img {
+            border-radius: 2rem;
+            background-color: var(--color-quinary);
+            opacity: 0.8;
+            width: 20rem;
+            margin: 2rem;
+            transition: all 0.3s ease-in-out;
+        }
+
+        &--img:hover,
+        &--img:active {
+            transform: scale(1.03);
+            filter: invert(85%);
+        }
+    }
+
+    //*-*-*-*-*-*-*-*-*-*-*-*-* The 450px Break Point *-*-*-*-*-*-*-*-*-*-*-*-*
+    @include media-small {
+        &__content {
+
+            &--img {
+                width: 15rem;
+                margin: 1rem;
+
+                img {
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}

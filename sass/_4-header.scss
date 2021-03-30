@@ -1,0 +1,344 @@
+.header {
+    background-color: var(--color-secondary);
+    grid-column: container-start / container-end;
+
+    // Dynamic class => toggle js
+    &.open .header__menu--line {
+        background-color: transparent;
+    }
+
+    &.open .header__menu--line::before,
+    &.open .header__menu--line::after {
+        content: "";
+        top: 0;
+    }
+
+    &.open .header__menu--line::before {
+        content: "";
+        transform: rotate(45deg);
+    }
+
+    &.open .header__menu--line::after {
+        content: "";
+        transform: rotate(-45deg);
+    }
+
+    &__overlay {
+        width: 100%;
+        height: 100vh;
+        background-color: var(--color-tertiary);
+        position: fixed;
+        opacity: 0;
+        display: none;
+        z-index: 10;
+    }
+
+    &__nav {
+        width: 100%;
+        height: 7rem;
+        line-height: 7rem;
+        display: flex;
+        justify-content: space-evenly;
+        background-color: var(--color-primary);
+        text-transform: uppercase;
+        // for sudo link text that comes from bellow
+        overflow: hidden;
+
+        &--logo {
+            padding: 1rem;
+
+            img {
+                width: 5rem;
+                height: 5rem;
+            }
+        }
+
+        &--links {
+            display: flex;
+
+            &__item {
+
+                a:link,
+                a:visited {
+                    margin-right: 2vw;
+                    padding: 0 1.5rem;
+                    display: block;
+                    position: relative;
+                    // effect on hover
+                    transform-style: preserve-3d;
+                    transform-origin: top;
+                    transition: transform 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+                }
+
+                a:hover,
+                a:active {
+                    transform: rotateX(90deg);
+                }
+
+                // sudo link text that comes from bellow when links are hovered
+                a:link::after,
+                a:visited::after {
+                    content: attr(data-text);
+                    position: absolute;
+                    background-color: var(--color-tertiary);
+                    left: 0;
+                    bottom: -100%;
+                    transform: rotateX(-90deg);
+                    transform-origin: top;
+                    padding: 0 1.5rem;
+                }
+            }
+
+            // animation for menu links when page reloads
+            &__item:nth-child(odd) {
+                animation: downwards 1s forwards;
+            }
+
+            &__item:nth-child(even) {
+                animation: upwards 1s forwards;
+            }
+
+
+
+
+            // switch toggle to Dark Mode Theme
+            &__toggle-container {
+                display: flex;
+                align-items: center;
+
+                // dark/light mode icon
+                i {
+                    color: var(--color-quinary);
+                    font-size: 1.5rem;
+                    margin-right: 5px;
+                }
+
+                .fa-sun {
+                    display: none;
+                }
+
+                // checkbox
+                input[type="checkbox"] {
+                    position: relative;
+                    width: 6rem;
+                    height: 3rem;
+                    outline: none;
+                    cursor: pointer;
+                    // resete/delete default checkbox style
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+
+                    background-color: var(--color-quinary);
+                    border-radius: 2.5rem;
+                    // shadow inside switch
+                    box-shadow: inset 0 0 0.6rem 0.1rem rgb(158, 157, 157);
+                    transition: all 0.5s ease-in-out;
+                }
+
+                // when checkbox is checked, do something
+                input:checked[type="checkbox"] {
+                    background-color: var(--color-primary-m);
+                }
+
+                // when checkbox is not checked
+                input:not(:checked)[type="checkbox"] {
+                    background-color: var(--color-tertiary)
+                }
+
+                // adding two circles to checkbox
+                input[type="checkbox"]::before,
+                input[type="checkbox"]::after {
+                    content: "";
+                    position: absolute;
+                    top: 0.8rem;
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    border-radius: 50%;
+                    background-color: var(--color-quinary);
+                    box-shadow: 0 0.1rem 0.3rem 0.1rem rgba(128, 128, 128, 0.35);
+                    transition: all 0.5s ease-in-out;
+                }
+
+                // position the circle left 
+                input[type="checkbox"]::before {
+                    left: 0.5rem;
+                }
+
+                // position the circle right
+                input[type="checkbox"]::after {
+                    right: 0.5rem;
+                }
+
+                // position the circle to center when checkbox is activated
+                input:checked[type="checkbox"]::before {
+                    left: 37%;
+                    box-shadow: none;
+                }
+
+                // position the circle to center when checkbox is activated
+                input:checked[type="checkbox"]::after {
+                    right: 37%;
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+
+    //*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* The 1330px Break Point *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+    @include media-desktop {
+        &__nav {
+            &--links {
+                &__item {
+
+                    a:link,
+                    a:visited {
+                        font-size: 1.7rem;
+                    }
+                }
+            }
+        }
+    }
+
+
+    //*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* The 800px Break Point *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+    @include media-tablet {
+        &__nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 25rem;
+            height: 100vh;
+            line-height: initial;
+            flex-direction: column;
+            text-align: center;
+            // we have an overlay on z-index 10
+            z-index: 20;
+            // rotating menu
+            transform: perspective(70rem) rotateY(0.5turn);
+            transform-origin: top left;
+            transition: transform 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+            &--links {
+                height: 80%;
+                flex-direction: column;
+                // align-items: center;
+                justify-content: space-evenly;
+
+                &__item {
+                    // reset animation of links 
+                    animation: initial;
+
+                    a:link,
+                    a:visited {
+                        position: relative;
+                        transform-origin: left;
+                        margin-right: initial;
+                        padding: 2rem;
+                        font-size: 1.6rem;
+                    }
+
+                    a:hover,
+                    a:active {
+                        transform: rotateY(90deg);
+                    }
+
+                    a:link::after,
+                    a:visited::after {
+                        top: 0;
+                        bottom: 100%;
+                        left: 100%;
+                        width: 100%;
+                        height: 100%;
+                        // added line-height for pseudo element to be centered by Y axle;
+                        line-height: 7rem;
+                        transform-origin: left;
+                        transform: rotateY(-90deg);
+
+                    }
+                }
+
+                &__toggle-container {
+                    flex-direction: column;
+                    justify-content: center;
+
+                    & i {
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+        }
+
+        // open nav menu when hamb button is clicked
+        &.open nav {
+            transform: rotateY(0);
+        }
+
+        &__menu {
+            position: fixed;
+            // background-color: var(--color-tertiary);
+            height: 4rem;
+            width: 4rem;
+            top: 2rem;
+            right: 2rem;
+            padding: 2.5rem;
+            z-index: 20;
+            cursor: pointer;
+
+            &--line,
+            &--line::before,
+            &--line::after {
+                content: "";
+                position: absolute;
+                width: 3.5rem;
+                height: 2px;
+                background-color: var(--color-quinary);
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                margin: auto;
+                transition: all 0.5s ease-in-out;
+            }
+
+            &--line::before {
+                top: -2.2rem;
+            }
+
+            &--line::after {
+                top: 2.2rem;
+            }
+
+        }
+
+        &__overlay.open {
+            display: block;
+            opacity: 0.8;
+        }
+    }
+}
+
+// // animation for menu links when page reloads
+
+@keyframes downwards {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes upwards {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

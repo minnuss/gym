@@ -1,0 +1,145 @@
+//*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* The 1300px Break Point *-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+@mixin media-desktop {
+
+    // calling break point variable function from 2-variables.scss
+    // above 1300px change styles - min-width
+    @media (min-width: break-point(break-point-desktop)) {
+        @content;
+    }
+}
+
+
+//*-*-*-*-*-*-*-*-*-*-*-*-* The 820px Break Point *-*-*-*-*-*-*-*-*-*-*-*-*
+@mixin media-tablet {
+
+    // calling break point variable function from 2-variables.scss
+    // bellow 800px change styles - max-width
+    @media (max-width: break-point(break-point-tablet)) {
+        @content;
+    }
+}
+
+//*-*-*-*-*-*-*-*-*-*-*-*-* The 600px Break Point *-*-*-*-*-*-*-*-*-*-*-*-*
+@mixin media-medium {
+
+    // calling break point variable function from 2-variables.scss
+    // bellow 600px change styles - max-width
+    @media (max-width: break-point(break-point-medium)) {
+        @content;
+    }
+}
+
+//*-*-*-*-*-*-*-*-*-*-*-*-* The 450px Break Point *-*-*-*-*-*-*-*-*-*-*-*-*
+@mixin media-small {
+
+    // calling break point variable function from 2-variables.scss
+    // bellow 450px change styles - max-width
+    @media (max-width: break-point(break-point-small)) {
+        @content;
+    }
+}
+
+//*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*
+
+// changing what color will txt be when selecting text on webpage with mouse
+::selection {
+    background-color: var(--color-primary);
+}
+
+
+@import "1-reset";
+@import "2-variables";
+@import "3-utilities";
+@import "4-header";
+@import "5-hero";
+@import "6-motto";
+@import "7-features";
+@import "8-trainers";
+@import "9-testimonials";
+@import "10-clients";
+@import "11-register";
+@import "12-footer";
+
+//*-*-*-*-*-*-*-*-*-*-* Placeholder Styles *-*-*-*-*-*-*-*-*-*-*
+// EXTEND - Background properties
+%bg {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+// Section padding
+%sec-padding {
+    padding: 6vh 4vw;
+}
+
+// Styles for section headings (h2) => variables are in 2-variables.scss
+%sec-h2 {
+    font-size: font-size(font-size-medium);
+    font-weight: font-weight(font-weight-light);
+    letter-spacing: 0.2rem;
+    color: var(--color-quinary);
+}
+
+// Styles for section headings (h3) => variables are in 2-variables.scss
+%sec-h3 {
+    font-size: font-size(font-size-small);
+    color: var(--color-quinary);
+}
+
+// Styles for section headings (h4) => variables are in 2-variables.scss
+%sec-h4 {
+    color: var(--color-quinary);
+}
+
+// Styles for section paragraphs (p) => variables are in 2-variables.scss
+%sec-para {
+    font-size: font-size(font-size-small);
+    color: var(--color-quinary);
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.2rem;
+}
+
+//*-*-*-*-*-*-*-*-*-*-* Scroll to top *-*-*-*-*-*-*-*-*-*-*
+.scroll-top {
+    opacity: 0;
+    position: fixed;
+    bottom: 120rem;
+    right: 2rem;
+    cursor: pointer;
+    transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+
+    i {
+        font-size: 4rem;
+    }
+}
+
+.scroll-top.active {
+    opacity: 1;
+    // animation: scrollUp 1s linear;
+    z-index: 25;
+    bottom: 4rem;
+}
+
+// Animation if we want scroll to top icon to appear from bellow
+
+// @keyframes scrollUp {
+//     0% {
+//         transform: translateY(100%);
+//     }
+
+//     100% {
+//         transform: translateY(0%);
+//     }
+// }
+
+
+//*-*-*-*-*-*-*-*-*-*-* Dark mode smooth transition *-*-*-*-*-*-*-*-*-*-*
+
+html.transition,
+html.transition *,
+html.transition *::before,
+html.transition *::after {
+    transition: all 0.7s !important;
+    transition-delay: 0 !important;
+}
