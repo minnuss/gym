@@ -366,6 +366,7 @@ i {
 
 .hero {
   grid-column: container-start / container-end;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--color-quaternary-m)), to(var(--color-quaternary-m))), url(../img/hero/hero-bg.jpg);
   background-image: linear-gradient(var(--color-quaternary-m), var(--color-quaternary-m)), url(../img/hero/hero-bg.jpg);
   display: flex;
   justify-content: center;
@@ -508,6 +509,7 @@ i {
 
 .motto {
   grid-column: container-start / container-end;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--color-tertiary-m)), to(var(--color-tertiary-m))), url(../img/motto/motto-bg.jpg);
   background-image: linear-gradient(var(--color-tertiary-m), var(--color-tertiary-m)), url(../img/motto/motto-bg.jpg);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
@@ -943,6 +945,7 @@ i {
 
 .testimonials {
   grid-column: container-start / container-end;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--color-tertiary-m)), to(var(--color-tertiary-m))), url(../img/testimonials/testimonials-bg.jpg);
   background-image: linear-gradient(var(--color-tertiary-m), var(--color-tertiary-m)), url(../img/testimonials/testimonials-bg.jpg);
 }
 
@@ -1238,6 +1241,7 @@ i {
 
 .footer {
   grid-column: container-start / container-end;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--color-tertiary-m)), to(var(--color-tertiary-m))), url(../img/footer/footer-bg.jpg);
   background-image: linear-gradient(var(--color-tertiary-m), var(--color-tertiary-m)), url(../img/footer/footer-bg.jpg);
   display: grid;
   grid-template-rows: repeat(3, max-content);
@@ -1275,7 +1279,7 @@ i {
   padding-right: 4vw;
 }
 
-.footer__content--section:nth-child(3) input[type="email"] {
+.footer__content--section:nth-child(3) input[type='email'] {
   padding: 1rem;
   background-color: transparent;
   color: var(--color-quinary);
@@ -1284,7 +1288,7 @@ i {
   border-right: none;
 }
 
-.footer__content--section:nth-child(3) input[type="submit"] {
+.footer__content--section:nth-child(3) input[type='submit'] {
   background-color: transparent;
   color: var(--color-quinary);
   border: none;
@@ -1304,8 +1308,8 @@ i {
   color: var(--color-secondary);
 }
 
-.footer__content--section:nth-child(3) input[type="submit"]:hover,
-.footer__content--section:nth-child(3) input[type="submit"]:active {
+.footer__content--section:nth-child(3) input[type='submit']:hover,
+.footer__content--section:nth-child(3) input[type='submit']:active {
   background-color: var(--color-quinary);
   color: var(--color-secondary);
 }
@@ -1381,7 +1385,7 @@ i {
 }
 
 .footer__social--icons__link:link::before, .footer__social--icons__link:visited::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;

@@ -1,102 +1,113 @@
 .testimonials {
-    grid-column: container-start / container-end;
+  grid-column: container-start / container-end;
 
-    background-image: linear-gradient(var(--color-tertiary-m), var(--color-tertiary-m)),
-        url(../img/testimonials/testimonials-bg.jpg);
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(var(--color-tertiary-m)),
+      to(var(--color-tertiary-m))
+    ),
+    url(../img/testimonials/testimonials-bg.jpg);
 
-    @extend %bg;
-    @extend %sec-padding;
+  background-image: linear-gradient(
+      var(--color-tertiary-m),
+      var(--color-tertiary-m)
+    ),
+    url(../img/testimonials/testimonials-bg.jpg);
 
-    &__title {
-        text-align: center;
-        @extend %sec-h2;
-        margin-bottom: 4vh;
+  @extend %bg;
+  @extend %sec-padding;
+
+  &__title {
+    text-align: center;
+    @extend %sec-h2;
+    margin-bottom: 4vh;
+  }
+
+  &__content {
+    max-width: 100rem;
+    margin: 0 auto;
+
+    &--slider {
+      border: 0.1rem solid var(--color-quinary);
+      max-width: 60rem;
+      min-width: 25rem;
+      margin: 0 auto;
+      text-align: center;
+      padding: 2vh 1vw;
+      overflow: hidden;
+
+      &__slide {
+        display: none;
+
+        &--title {
+          @extend %sec-h3;
+        }
+
+        &--para {
+          @extend %sec-para;
+          margin-bottom: 3rem;
+        }
+      }
+
+      &__slide.active {
+        display: block;
+        animation: slide 1s linear;
+      }
     }
 
+    // styling images
+    &--indicator {
+      padding-top: 4vh;
+      padding-bottom: 4vh;
+      display: flex;
+      justify-content: center;
+
+      &__img {
+        width: calc(7rem + 6vw);
+        height: calc(7rem + 6vw);
+        object-fit: cover;
+        border-radius: 50%;
+        margin: 2vh 2vw;
+        opacity: 0.2;
+        border: 0.2rem solid var(--color-quinary);
+        cursor: pointer;
+        transition: opacity 1s ease;
+      }
+
+      &__img.active {
+        opacity: 1;
+      }
+    }
+  }
+
+  //*-*-*-*-*-*-*-*-*-*-*-*-* The 820px Break Point *-*-*-*-*-*-*-*-*-*-*-*-*
+
+  @include media-tablet {
     &__content {
-        max-width: 100rem;
-        margin: 0 auto;
-
-        &--slider {
-            border: 0.1rem solid var(--color-quinary);
-            max-width: 60rem;
-            min-width: 25rem;
-            margin: 0 auto;
-            text-align: center;
-            padding: 2vh 1vw;
-            overflow: hidden;
-
-
-            &__slide {
-                display: none;
-
-                &--title {
-                    @extend %sec-h3;
-                }
-
-                &--para {
-                    @extend %sec-para;
-                    margin-bottom: 3rem;
-                }
-            }
-
-            &__slide.active {
-                display: block;
-                animation: slide 1s linear;
-            }
+      &--indicator {
+        &__img {
+          width: calc(7rem + 7vw);
+          height: calc(7rem + 7vw);
         }
-
-        // styling images
-        &--indicator {
-            padding-top: 4vh;
-            padding-bottom: 4vh;
-            display: flex;
-            justify-content: center;
-
-            &__img {
-                width: calc(7rem + 6vw);
-                height: calc(7rem + 6vw);
-                object-fit: cover;
-                border-radius: 50%;
-                margin: 2vh 2vw;
-                opacity: 0.2;
-                border: 0.2rem solid var(--color-quinary);
-                cursor: pointer;
-                transition: opacity 1s ease;
-            }
-
-            &__img.active {
-                opacity: 1;
-            }
-        }
+      }
     }
-
-    //*-*-*-*-*-*-*-*-*-*-*-*-* The 820px Break Point *-*-*-*-*-*-*-*-*-*-*-*-*
-
-    @include media-tablet {
-        &__content {
-            &--indicator {
-                &__img {
-                    width: calc(7rem + 7vw);
-                    height: calc(7rem + 7vw);
-                }
-            }
-        }
-    }
+  }
 }
 
 @keyframes slide {
-    0% {
-        transform: translateX(-10%);
-        opacity: 0;
-    }
+  0% {
+    transform: translateX(-10%);
+    opacity: 0;
+  }
 
-    50% {
-        opacity: 0.3;
-    }
+  50% {
+    opacity: 0.3;
+  }
 
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }

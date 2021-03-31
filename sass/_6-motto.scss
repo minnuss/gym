@@ -1,154 +1,178 @@
 .motto {
-    grid-column: container-start / container-end;
-    background-image: linear-gradient(var(--color-tertiary-m),
-            var(--color-tertiary-m)), url(../img/motto/motto-bg.jpg);
-    @extend %bg;
-    @extend %sec-padding;
+  grid-column: container-start / container-end;
 
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(var(--color-tertiary-m)),
+      to(var(--color-tertiary-m))
+    ),
+    url(../img/motto/motto-bg.jpg);
+
+  background-image: linear-gradient(
+      var(--color-tertiary-m),
+      var(--color-tertiary-m)
+    ),
+    url(../img/motto/motto-bg.jpg);
+  @extend %bg;
+  @extend %sec-padding;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 2.5rem;
+  place-content: center;
+
+  &__content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap: 2.5rem;
-    place-content: center;
+    row-gap: 4vh;
+    background-color: var(--color-quaternary-m);
+    padding: 2rem;
+    transition: transform 0.3s ease-in-out;
+
+    &--title {
+      @extend %sec-h2;
+    }
+
+    &--para {
+      @extend %sec-para;
+    }
+
+    &--link:link,
+    &--link:visited {
+      position: relative;
+      background: none;
+      place-self: start;
+      padding: 1rem 1.5rem;
+      transition: all 0.5s ease-in-out;
+      overflow: hidden;
+
+      // styling span's for hover effect
+      span {
+        display: block;
+        position: absolute;
+      }
+
+      span:nth-child(1) {
+        top: 0;
+        left: -100%;
+        height: 0.2rem;
+        width: 100%;
+        background: linear-gradient(90deg, transparent, var(--color-secondary));
+        transition: 0.5s;
+        transition-delay: 1s;
+      }
+
+      span:nth-child(2) {
+        top: -100%;
+        right: 0;
+        height: 100%;
+        width: 0.2rem;
+        background: linear-gradient(
+          180deg,
+          transparent,
+          var(--color-secondary)
+        );
+        transition: 0.5s;
+        transition-delay: 0.75s;
+      }
+
+      span:nth-child(3) {
+        bottom: 0;
+        right: -100%;
+        height: 0.2rem;
+        width: 100%;
+        background: linear-gradient(
+          270deg,
+          transparent,
+          var(--color-secondary)
+        );
+        transition: 0.5s;
+        transition-delay: 0.3s;
+      }
+
+      span:nth-child(4) {
+        bottom: -100%;
+        left: 0;
+        height: 100%;
+        width: 0.2rem;
+        background: linear-gradient(
+          360deg,
+          transparent,
+          var(--color-secondary)
+        );
+        transition: 0.5s;
+        transition-delay: 0;
+      }
+    }
+
+    // creating hover effect of span's
+    &--link:hover,
+    &--link:active {
+      background: var(--color-secondary);
+      transition-delay: 0.55s;
+    }
+
+    &--link:hover span:nth-child(1),
+    &--link:active span:nth-child(1) {
+      left: 100%;
+      transition-duration: 0.5s;
+      transition-delay: 0s;
+    }
+
+    &--link:hover span:nth-child(2),
+    &--link:active span:nth-child(2) {
+      top: 100%;
+      transition-duration: 0.5s;
+      transition-delay: 0.135s;
+    }
+
+    &--link:hover span:nth-child(3),
+    &--link:active span:nth-child(3) {
+      right: 100%;
+      transition-duration: 0.5s;
+      transition-delay: 0.27s;
+    }
+
+    &--link:hover span:nth-child(4),
+    &--link:active span:nth-child(4) {
+      bottom: 100%;
+      transition-duration: 0.5s;
+      transition-delay: 0.5s;
+    }
+  }
+
+  &__content:hover {
+    transform: translateY(-5px);
+  }
+
+  //*-*-*-*-*-*-*-*-*-*-*-* The 1330px Break Point *-*-*-*-*-*-*-*-*-*-*-*
+
+  @include media-desktop {
+    background-position: initial !important;
 
     &__content {
-        display: grid;
-        row-gap: 4vh;
-        background-color: var(--color-quaternary-m);
-        padding: 2rem;
-        transition: transform 0.3s ease-in-out;
+      &--title {
+        font-weight: font-weight(font-weight-medium) !important;
+        font-size: 4rem !important;
+      }
 
-        &--title {
-            @extend %sec-h2;
-        }
-
-        &--para {
-            @extend %sec-para;
-        }
-
-        &--link:link,
-        &--link:visited {
-            position: relative;
-            background: none;
-            place-self: start;
-            padding: 1rem 1.5rem;
-            transition: all 0.5s ease-in-out;
-            overflow: hidden;
-
-
-            // styling span's for hover effect
-            span {
-                display: block;
-                position: absolute;
-            }
-
-            span:nth-child(1) {
-                top: 0;
-                left: -100%;
-                height: 0.2rem;
-                width: 100%;
-                background: linear-gradient(90deg, transparent, var(--color-secondary));
-                transition: 0.5s;
-                transition-delay: 1s;
-            }
-
-            span:nth-child(2) {
-                top: -100%;
-                right: 0;
-                height: 100%;
-                width: 0.2rem;
-                background: linear-gradient(180deg, transparent, var(--color-secondary));
-                transition: 0.5s;
-                transition-delay: 0.75s;
-            }
-
-            span:nth-child(3) {
-                bottom: 0;
-                right: -100%;
-                height: 0.2rem;
-                width: 100%;
-                background: linear-gradient(270deg, transparent, var(--color-secondary));
-                transition: 0.5s;
-                transition-delay: 0.3s;
-            }
-
-            span:nth-child(4) {
-                bottom: -100%;
-                left: 0;
-                height: 100%;
-                width: 0.2rem;
-                background: linear-gradient(360deg, transparent, var(--color-secondary));
-                transition: 0.5s;
-                transition-delay: 0;
-            }
-        }
-
-        // creating hover effect of span's
-        &--link:hover,
-        &--link:active {
-            background: var(--color-secondary);
-            transition-delay: 0.55s;
-        }
-
-        &--link:hover span:nth-child(1),
-        &--link:active span:nth-child(1) {
-            left: 100%;
-            transition-duration: 0.5s;
-            transition-delay: 0s;
-        }
-
-        &--link:hover span:nth-child(2),
-        &--link:active span:nth-child(2) {
-            top: 100%;
-            transition-duration: 0.5s;
-            transition-delay: 0.135s;
-        }
-
-        &--link:hover span:nth-child(3),
-        &--link:active span:nth-child(3) {
-            right: 100%;
-            transition-duration: 0.5s;
-            transition-delay: 0.27s;
-        }
-
-        &--link:hover span:nth-child(4),
-        &--link:active span:nth-child(4) {
-            bottom: 100%;
-            transition-duration: 0.5s;
-            transition-delay: 0.5s;
-        }
+      &--para {
+        font-size: 1.8rem !important;
+      }
     }
+  }
 
-    &__content:hover {
-        transform: translateY(-5px);
+  //*-*-*-*-*-*-*-*-*-*-*-*-* The 450px Break Point *-*-*-*-*-*-*-*-*-*-*-*-*
+  @include media-small {
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr)) !important;
+
+    &__content {
+      max-width: 40rem;
+      min-width: 27rem;
+      row-gap: 4vh;
+      background-color: var(--color-quaternary-m);
+      padding: 2rem;
     }
-
-    //*-*-*-*-*-*-*-*-*-*-*-* The 1330px Break Point *-*-*-*-*-*-*-*-*-*-*-*
-
-    @include media-desktop {
-        background-position: initial !important;
-
-        &__content {
-            &--title {
-                font-weight: font-weight(font-weight-medium) !important;
-                font-size: 4rem !important;
-            }
-
-            &--para {
-                font-size: 1.8rem !important;
-            }
-        }
-    }
-
-    //*-*-*-*-*-*-*-*-*-*-*-*-* The 450px Break Point *-*-*-*-*-*-*-*-*-*-*-*-*
-    @include media-small {
-        grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr)) !important;
-
-        &__content {
-            max-width: 40rem;
-            min-width: 27rem;
-            row-gap: 4vh;
-            background-color: var(--color-quaternary-m);
-            padding: 2rem;
-        }
-    }
+  }
 }
