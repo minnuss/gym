@@ -2,17 +2,18 @@
   // background-color: var(--color-tertiary);
   grid-column: container-start / container-end;
 
-  background-image: -webkit-linear-gradient(
+  background: linear-gradient(
+      135deg,
       var(--color-quaternary-m),
       var(--color-quaternary-m)
     ),
     url(../img/hero/hero-bg.jpg);
 
-  background-image: linear-gradient(
-      var(--color-quaternary-m),
-      var(--color-quaternary-m)
-    ),
-    url(../img/hero/hero-bg.jpg);
+  // background-image: linear-gradient(
+  //     var(--color-quaternary-m),
+  //     var(--color-quaternary-m)
+  //   ),
+  //   url(../img/hero/hero-bg.jpg);
 
   @extend %bg;
   @extend %sec-padding;
