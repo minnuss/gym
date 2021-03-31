@@ -367,7 +367,8 @@ i {
 
 .hero {
   grid-column: container-start / container-end;
-  background-image: -webkit-linear-gradient(top, var(--color-quaternary-m), var(--color-quaternary-m)), url(../img/hero/hero-bg.jpg);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--color-quaternary-m)), to(var(--color-quaternary-m))), url(../img/hero/hero-bg.jpg);
+  background-image: -o-linear-gradient(var(--color-quaternary-m), var(--color-quaternary-m)), url(../img/hero/hero-bg.jpg);
   background-image: linear-gradient(var(--color-quaternary-m), var(--color-quaternary-m)), url(../img/hero/hero-bg.jpg);
   display: flex;
   justify-content: center;
