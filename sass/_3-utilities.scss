@@ -26,8 +26,8 @@ body {
 
     // media query
     @include media-tablet {
-        // hero section goes from 90vh to 100vh in tablet mode or below 1300px
-        grid-template-rows: min-content 100vh repeat(9, min-content);
+        // hero section goes from 95vh to 100vh in tablet mode or below 1300px
+        grid-template-rows: min-content 95vh repeat(9, min-content);
     }
 }
 
