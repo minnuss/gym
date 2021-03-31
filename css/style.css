@@ -12,27 +12,27 @@
 }
 
 html {
-  --color-primary: #8B0100;
+  --color-primary: #8b0100;
   --color-primary-m: #ac04523f;
   --color-secondary: #c4195d;
-  --color-secondary-m: #A546A0;
-  --color-tertiary: #74235D;
+  --color-secondary-m: #a546a0;
+  --color-tertiary: #74235d;
   --color-tertiary-m: #2224369a;
-  --color-quaternary: #50396D;
+  --color-quaternary: #50396d;
   --color-quaternary-m: #012e4480;
-  --color-quinary: #FFE6D9;
+  --color-quinary: #ffe6d9;
   --color-quinary-m: rgba(255, 255, 255, 0.5);
 }
 
-html[data-theme="dark"] {
+html[data-theme='dark'] {
   --color-primary: rgb(36, 38, 43);
   --color-primary-m: rgba(36, 38, 43, 0.65);
   --color-secondary: rgb(124, 185, 8);
   --color-secondary-m: rgba(123, 185, 8, 0.5);
   --color-tertiary: rgb(38, 52, 65);
-  --color-tertiary-m: hsla(183, 34%, 38%, 0.65);
-  --color-quaternary: hsl(220, 10%, 28%);
-  --color-quaternary-m: hsla(220, 10%, 28%, 0.65);
+  --color-tertiary-m: rgb(64, 127, 130, 0.65);
+  --color-quaternary: rgb(64, 69, 79);
+  --color-quaternary-m: rgb(64, 69, 79, 0.65);
   --color-quinary: white;
   --color-quinary-m: rgba(255, 255, 255, 0.5);
 }
@@ -367,7 +367,7 @@ i {
 
 .hero {
   grid-column: container-start / container-end;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.7) 100%), url(../img/hero/hero-bg.jpg);
+  background: linear-gradient(135deg, rgba(1, 46, 68, 0.65) 0%, rgba(1, 46, 68, 0.65) 100%), url(../img/hero/hero-bg.jpg);
   display: flex;
   justify-content: center;
   align-items: flex-end;
