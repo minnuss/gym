@@ -1,18 +1,16 @@
 .footer {
   grid-column: container-start / container-end;
 
-  background-image: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(var(--color-tertiary-m)),
-      to(var(--color-tertiary-m))
-    ),
-    url(../img/footer/footer-bg.jpg);
-
   background-image: linear-gradient(
       var(--color-tertiary-m),
       var(--color-tertiary-m)
+    ),
+    url(../img/footer/footer-bg.jpg);
+
+  background-image: -webkit-linear-gradient(
+      top,
+      (var(--color-tertiary-m)),
+      (var(--color-tertiary-m))
     ),
     url(../img/footer/footer-bg.jpg);
 
