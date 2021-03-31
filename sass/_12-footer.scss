@@ -1,18 +1,19 @@
 .footer {
   grid-column: container-start / container-end;
 
-  background-image: linear-gradient(
-      var(--color-tertiary-m),
-      var(--color-tertiary-m)
+  background: linear-gradient(
+      135deg,
+      rgba(34, 36, 54, 0.75) 0%,
+      rgba(34, 36, 54, 0.75) 100%
     ),
     url(../img/footer/footer-bg.jpg);
 
-  background-image: -webkit-linear-gradient(
-      top,
-      (var(--color-tertiary-m)),
-      (var(--color-tertiary-m))
-    ),
-    url(../img/footer/footer-bg.jpg);
+  // code bellow does not work on safari mobile browser
+  //   background-image: linear-gradient(
+  //       var(--color-tertiary-m),
+  //       var(--color-tertiary-m)
+  //     ),
+  //     url(../img/footer/footer-bg.jpg);
 
   @extend %bg;
   @extend %sec-padding;
