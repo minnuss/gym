@@ -1,9 +1,9 @@
 :root {
-    font-size: 62.5%; // 10px
+  font-size: 62.5%; // 10px
 }
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto&display=swap');
@@ -12,43 +12,46 @@ html {
 // font-family: 'Roboto', sans-serif;
 
 body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.9;
-    background-color: var(--color-primary);
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.9;
+  background-color: var(--color-primary);
 }
 
 .container {
-    display: grid;
-    // 6 * 16.66667 = 100 * 10 = 1000px;
-    grid-template-columns: [container-start] 1fr [center-start] repeat(6, [col-start] minmax(min-content, 16.66667rem) [col-end]) [center-end] 1fr [container-end];
+  display: grid;
+  // 6 * 16.66667 = 100 * 10 = 1000px;
+  grid-template-columns: [container-start] 1fr [center-start] repeat(
+      6,
+      [col-start] minmax(min-content, 16.66667rem) [col-end]
+    ) [center-end] 1fr [container-end];
 
-    grid-template-rows: min-content 90vh repeat(9, min-content);
+  grid-template-rows: min-content 90vh repeat(9, min-content);
 
-    // media query
-    @include media-tablet {
-        // hero section goes from 95vh to 100vh in tablet mode or below 1300px
-        grid-template-rows: min-content 95vh repeat(9, min-content);
-    }
+  // media query
+  @include media-tablet {
+    // hero section goes from 95vh to 100vh in tablet mode or below 1300px
+    grid-template-rows: min-content 100vh repeat(9, min-content);
+  }
 }
 
 // for lists
 li {
-    list-style: none;
+  list-style: none;
 }
 
 // for links
 a:link,
 a:visited {
-    text-decoration: none;
-    color: var(--color-quinary);
-    letter-spacing: 0.2rem;
-    // functions are defined in 2-variables.scss file
-    font-weight: font-weight(font-weight-light);
-    font-size: font-size(font-size-small);
+  text-decoration: none;
+  color: var(--color-quinary);
+  letter-spacing: 0.2rem;
+  // functions are defined in 2-variables.scss file
+  font-weight: font-weight(font-weight-light);
+  font-size: font-size(font-size-small);
 }
 
 // for font awesome
 i {
-    color: var(--color-secondary);
-    font-size: font-size(font-size-medium);
+  color: var(--color-secondary);
+  font-size: font-size(font-size-medium);
 }
