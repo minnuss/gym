@@ -2,15 +2,7 @@
   // background-color: var(--color-tertiary);
   grid-column: container-start / container-end;
 
-  background-image: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(var(--color-quaternary-m)),
-      to(var(--color-quaternary-m))
-    ),
-    url(../img/hero/hero-bg.jpg);
-  background-image: -o-linear-gradient(
+  background-image: -webkit-linear-gradient(
       var(--color-quaternary-m),
       var(--color-quaternary-m)
     ),
