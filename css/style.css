@@ -367,7 +367,7 @@ i {
 
 .hero {
   grid-column: container-start / container-end;
-  background: linear-gradient(135deg, var(--color-quaternary-m) 0%, var(--color-quaternary-m) 100%), url(../img/hero/hero-bg.jpg);
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.7) 100%), url(../img/hero/hero-bg.jpg);
   display: flex;
   justify-content: center;
   align-items: flex-end;
